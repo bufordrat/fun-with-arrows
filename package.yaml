@@ -1,0 +1,64 @@
+name:                arrows
+version:             0.1.0.0
+
+extra-source-files:
+- README.md
+
+description:         arrows
+
+ghc-options:
+- -Wall
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wno-unused-top-binds
+- -Wno-unused-local-binds
+- -Wno-unused-pattern-binds
+- -Wno-unused-matches
+- -Wno-missing-signatures
+- -Wno-type-defaults
+- -Wno-compat-unqualified-imports
+- -Wno-name-shadowing
+- -fdefer-typed-holes
+- -fprint-explicit-foralls
+
+language: GHC2024
+
+default-extensions:
+- InstanceSigs
+- NamedFieldPuns
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  fprint-explicit-foralls: true
+
+executables:
+  arrows-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - arrows
+    when:
+    - condition: false
+      other-modules: Paths_arrows
+
+tests:
+  arrows-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - arrows
+    - hspec
+    - hspec-discover
+    - QuickCheck
+
