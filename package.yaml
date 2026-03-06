@@ -1,9 +1,6 @@
 name:                arrows
 version:             0.1.0.0
 
-extra-source-files:
-- README.md
-
 description:         arrows
 
 ghc-options:
@@ -19,7 +16,6 @@ ghc-options:
 - -Wno-compat-unqualified-imports
 - -Wno-name-shadowing
 - -fdefer-typed-holes
-- -fprint-explicit-foralls
 
 language: GHC2024
 
@@ -32,7 +28,6 @@ dependencies:
 
 library:
   source-dirs: src
-  fprint-explicit-foralls: true
 
 executables:
   arrows-exe:

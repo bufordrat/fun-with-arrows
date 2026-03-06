@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.38.1.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -8,12 +8,11 @@ name:           arrows
 version:        0.1.0.0
 description:    arrows
 build-type:     Simple
-extra-source-files:
-    README.md
 
 library
   exposed-modules:
-      Lib
+      Raw
+      Syntax
   other-modules:
       Paths_arrows
   hs-source-dirs:
@@ -21,7 +20,7 @@ library
   default-extensions:
       InstanceSigs
       NamedFieldPuns
-  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes -fprint-explicit-foralls
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes
   build-depends:
       base >=4.7 && <5
   default-language: GHC2024
@@ -33,7 +32,7 @@ executable arrows-exe
   default-extensions:
       InstanceSigs
       NamedFieldPuns
-  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes -fprint-explicit-foralls -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       arrows
     , base >=4.7 && <5
@@ -50,7 +49,7 @@ test-suite arrows-test
   default-extensions:
       InstanceSigs
       NamedFieldPuns
-  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes -fprint-explicit-foralls -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wincomplete-record-updates -Wincomplete-uni-patterns -Wno-unused-top-binds -Wno-unused-local-binds -Wno-unused-pattern-binds -Wno-unused-matches -Wno-missing-signatures -Wno-type-defaults -Wno-compat-unqualified-imports -Wno-name-shadowing -fdefer-typed-holes -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
     , arrows
