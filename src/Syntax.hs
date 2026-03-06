@@ -29,9 +29,17 @@ exampleArr1 =
     y <- g -< i
     returnA -< show (x + y)
 
+exampleArr1_explicit :: Int -> String
+exampleArr1_explicit =
+  f &&& g >>> arr (\(x, y) -> show (x + y))
+
 exampleArr2 :: Kleisli Maybe Int String
 exampleArr2 =
   proc i -> do
     x <- fK -< i
     y <- gK -< i
     returnA -< show (x + y)
+
+exampleArr2_explicit :: Kleisli Maybe Int String
+exampleArr2_explicit =
+  fK &&& gK >>> arr (\(x, y) -> show (x + y))
